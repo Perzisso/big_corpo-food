@@ -11,3 +11,84 @@
 </html>
 
 <!--Voyons si cette mise a jour de html change une chose-->
+
+<!-- saving cmd git pour repo :
+
+antoine_ikigai@W0100279:~$ git clone git@github.com:Antoine-ikigai/big_corpo-food.git
+fatal: destination path 'big_corpo-food' already exists and is not an empty directory.
+antoine_ikigai@W0100279:~$ git branch
+fatal: not a git repository (or any of the parent directories): .git
+antoine_ikigai@W0100279:~$ git status
+fatal: not a git repository (or any of the parent directories): .git
+antoine_ikigai@W0100279:~$ cd big_corpo-food
+antoine_ikigai@W0100279:~/big_corpo-food$ git status
+On branch brancheantoine
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   3.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        big_corpo-food/
+
+antoine_ikigai@W0100279:~/big_corpo-food$ git add .
+warning: adding embedded git repository: big_corpo-food
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use:
+hint:
+hint:   git submodule add <url> big_corpo-food
+hint:
+hint: If you added this path by mistake, you can remove it from the
+hint: index with:
+hint:
+hint:   git rm --cached big_corpo-food
+hint:
+hint: See "git help submodule" for more information.
+antoine_ikigai@W0100279:~/big_corpo-food$ git status
+On branch brancheantoine
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   3.html
+        new file:   big_corpo-food
+
+antoine_ikigai@W0100279:~/big_corpo-food$ git commit -m "cette fois c'est bonne !"
+[brancheantoine 40e49ab] cette fois c'est bonne !
+ 2 files changed, 14 insertions(+)
+ create mode 160000 big_corpo-food
+antoine_ikigai@W0100279:~/big_corpo-food$ git remote
+origin
+antoine_ikigai@W0100279:~/big_corpo-food$
+antoine_ikigai@W0100279:~/big_corpo-food$ git push origin brancheantoine
+Enumerating objects: 12, done.
+Counting objects: 100% (12/12), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (11/11), 2.26 KiB | 579.00 KiB/s, done.
+Total 11 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+remote:
+remote: Create a pull request for 'brancheantoine' on GitHub by visiting:
+remote:      https://github.com/Perzisso/big_corpo-food/pull/new/brancheantoine
+remote:
+To github.com:Perzisso/big_corpo-food.git
+ * [new branch]      brancheantoine -> brancheantoine
+antoine_ikigai@W0100279:~/big_corpo-food$ git branch
+* brancheantoine
+  main
+  page-antoine
+antoine_ikigai@W0100279:~/big_corpo-food$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+antoine_ikigai@W0100279:~/big_corpo-food$ git remote add upstream https://github.com/Perzisso/big_corpo-food.git
+antoine_ikigai@W0100279:~/big_corpo-food$ git fetch upstream
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 625 bytes | 156.00 KiB/s, done.
+From https://github.com/Perzisso/big_corpo-food
+ * [new branch]      brancheantoine -> upstream/brancheantoine
+ * [new branch]      main           -> upstream/main
+antoine_ikigai@W0100279:~/big_corpo-food$ git merge upstream/master
+merge: upstream/master - not something we can merge
+antoine_ikigai@W0100279:~/big_corpo-food$ -->
